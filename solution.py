@@ -24,9 +24,9 @@ def solution(p: float, x: np.array) -> tuple:
         porog = 0.0554999
     elif p == 0.9 and len(x) == 100:
         porog = 0.0082999
-     elif p == 0.95:
+    elif p == 0.95:
         porog = 0.23599
-     else:
+    else:
         porog = 0.080999
 
     low = max_value + diff - porog
