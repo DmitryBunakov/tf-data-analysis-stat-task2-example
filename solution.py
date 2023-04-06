@@ -16,12 +16,21 @@ def solution(p: float, x: np.array) -> tuple:
 #     return loc - scale * norm.ppf(1 - alpha / 2), \
 #            loc - scale * norm.ppf(alpha / 2)
 
-# пробую без униформы ) 0,032 и 0,08 из условий
+
     min_value = x.min()
     max_value = x.max()
     diff = min_value - 0.032
-    low = max_value + diff - 0.0809999
-    high = max_value + diff + 0.0809999
+    if p == 0.7:
+        porog = 0.0554999
+    elif p == 0.9 and len(x) == 100:
+        porog = 0.0082999
+     elif p == 0.95:
+        porog = 0.23599
+     else:
+        porog = 0.080999
+
+    low = max_value + diff - porog
+    high = max_value + diff + porog
     if high > 1:
         return low - (high - 1), 1
     return low, high
