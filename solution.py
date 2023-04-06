@@ -1,4 +1,4 @@
-rimport pandas as pd
+import pandas as pd
 import numpy as np
 
 from scipy.stats import norm
@@ -28,7 +28,6 @@ def solution(p: float, x: np.array) -> tuple:
         porog = 0.23599
     else:
         porog = 0.080999
-
     low = max_value + diff - porog
     high = max_value + diff + porog
     if high > 1:
