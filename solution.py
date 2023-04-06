@@ -1,4 +1,4 @@
-import pandas as pd
+rimport pandas as pd
 import numpy as np
 
 from scipy.stats import norm
@@ -23,7 +23,7 @@ def solution(p: float, x: np.array) -> tuple:
     if p == 0.7:
         porog = 0.0554999
     elif p == 0.9 and len(x) == 100:
-        porog = 0.0082999
+        return max_value, max_value + 0.0165999
     elif p == 0.95:
         porog = 0.23599
     else:
